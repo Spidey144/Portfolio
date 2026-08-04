@@ -40,7 +40,7 @@ const Navbar = () => {
         </div>
 
         {/* Center: Desktop Menu Links */}
-        <div className="hidden md:flex space-x-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg p-2 rounded-xl  w-150  inline-flex justify-center ">
+        <div className="sm:hidden md:flex space-x-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg p-2 rounded-xl  w-150  inline-flex justify-center ">
           {navLinks.map((link) => (
             <a 
               key={link} 
