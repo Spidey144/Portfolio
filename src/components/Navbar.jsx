@@ -40,19 +40,21 @@ const Navbar = () => {
         </div>
 
         {/* Center: Desktop Menu Links */}
-        <div className="sm:hidden md:flex space-x-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg p-2 rounded-xl  w-150  inline-flex justify-center ">
-          {navLinks.map((link) => (
-            <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`}
-              className="text-[#c2c3a5] hover:text-[#c2c3a5] font-medium relative group transition-colors duration-300"
-            >
-              {link}
-              {/* Smooth hover underline */}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-        </div>
+        <div className="hidden md:flex items-center space-x-8">                                                                                                                       
+          <div className=" md:flex space-x-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg p-2 rounded-xl  w-150  inline-flex justify-center ">
+            {navLinks.map((link) => (
+              <a 
+                key={link} 
+                href={`#${link.toLowerCase()}`}
+                className="text-[#c2c3a5] hover:text-[#c2c3a5] font-medium relative group transition-colors duration-300"
+              >
+                {link}
+                {/* Smooth hover underline */}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+          </div>
+        </div>    
 
         {/* Right Side: CTA Button */}
         <div className="hidden md:block">
@@ -84,7 +86,7 @@ const Navbar = () => {
       {/* Mobile Slide-Down Menu */}
       <div 
         className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden ${
-          isOpen ? 'max-h-96 py-4 opacity-100 bg-[#ff2a2a] shadow-2xl' : 'max-h-0 opacity-0 bg-transparent'
+          isOpen ? 'max-h-110 py-4 opacity-100 bg-[#ff2a2a] shadow-2xl' : 'max-h-0 opacity-0 bg-transparent'
         }`}
       >
         <div className="flex flex-col px-6 space-y-4">

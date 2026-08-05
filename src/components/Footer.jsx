@@ -151,8 +151,8 @@ const Footer = () => {
         <h2
          data-aos="fade-left"
           className="
-            text-[14vw]
-            sm:text-[12vw]
+            text-[10vw]
+            sm:text-[9vw]
             md:text-[10vw]
             leading-none
             font-sans
