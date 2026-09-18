@@ -84,18 +84,25 @@ function CheckCardList({ list }) {
 // PROJECT DATA
 // ======================================================
 
-const list = [
+const list2= [
   "Developed full-stack web application using Django REST Framework and React.js.",
   "Implemented user authentication, registration, login, and secure session handling.",
   "Designed REST APIs to connect frontend and backend components.",
   "Built ticket search, booking, cancellation, and CRUD functionality.",
 ];
 
-const list2 = [
+const list3 = [
   "Built a machine-learning web application to classify URLs as phishing or legitimate using URL features.",
   "Implemented tokenization, stemming, CountVectorizer, and multiple ML models for URL classification.",
   "Developed Django REST APIs and a React frontend with URL scanning, confidence-based predictions, risk analysis, and scan history.",
   "Integrated MySQL to store URL scan results.",
+];
+
+const list1 = [
+  "Storefront & UI: Built a responsive, mobile-first storefront using React and Tailwind CSS with dynamic carousels and client-side validation.",
+  "State & Features: Managed cart persistence, custom combo builders, and distance-based delivery fees using React Context API.",
+  "Order Automation: Integrated Telegram Bot API for instant, serverless dispatch of COD order details and customer locations.",
+  "Optimization & CI/CD: Automated WebP image optimization via Cloudinary and set up continuous deployment on Vercel with a custom domain.",
 ];
 
 
@@ -199,6 +206,8 @@ function ProjectCard({
   description,
   features,
   technologies,
+  repoLink = "#",
+  demoLink = "#",
 }) {
   return (
     <div
@@ -376,7 +385,9 @@ function ProjectCard({
                 hover:bg-indigo-400/20
                 md:hover:scale-95
               "
-              href="#"
+              href={repoLink}
+              target={repoLink !== "#" ? "_blank" : undefined}
+              rel={repoLink !== "#" ? "noopener noreferrer" : undefined}
             >
               <GithubIcon />
 
@@ -408,7 +419,9 @@ function ProjectCard({
                 hover:bg-indigo-500
                 md:hover:scale-95
               "
-              href="#"
+              href={demoLink}
+              target={demoLink !== "#" ? "_blank" : undefined}
+              rel={demoLink !== "#" ? "noopener noreferrer" : undefined}
             >
               <LiveIcon />
 
@@ -536,6 +549,28 @@ function Projects() {
 
         {/* ==================================================
             PROJECT 1
+            ================================================== */}
+
+        <ProjectCard
+          category="Frontend / Serverless Web App"
+          title="OneGallery – Hyperlocal E-Commerce Platform"
+          description="
+           A mobile-first e-commerce app built with React and Tailwind CSS, featuring cart persistence and real-time order dispatch via Telegram Bot API.
+          "
+          features={list1}
+          technologies={[
+            "React.js",
+            "Tailwind CSS",
+            "Telegram Bot API",
+            "Cloudinary",
+            "Vercel",
+          ]}
+          repoLink="https://github.com/Spidey144/Onegallery.git"
+          demoLink="https://www.onegallery.in/"
+        />
+
+        {/* ==================================================
+            PROJECT 2
         ================================================== */}
 
         <ProjectCard
@@ -546,7 +581,7 @@ function Projects() {
             featuring robust seat layouts, real-time ticket searching,
             booking, cancellation, and clean CRUD flows.
           "
-          features={list}
+          features={list2}
           technologies={[
             "React.js",
             "Django",
@@ -554,11 +589,15 @@ function Projects() {
             "MySQL",
             "TailwindCSS",
           ]}
+          repoLink="https://github.com/Spidey144/Instabus.git"
         />
 
 
+
+
+
         {/* ==================================================
-            PROJECT 2
+            PROJECT 3
         ================================================== */}
 
         <ProjectCard
@@ -569,7 +608,7 @@ function Projects() {
             and classify them as phishing or legitimate using Machine
             Learning algorithms.
           "
-          features={list2}
+          features={list3}
           technologies={[
             "React.js",
             "Django REST APIs",
@@ -579,6 +618,7 @@ function Projects() {
             "Machine Learning",
           ]}
         />
+
 
       </div>
 
